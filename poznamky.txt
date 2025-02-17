@@ -1,0 +1,3 @@
+npm init stencil -> Component
+npm install -s @material/web
+npm run generate
