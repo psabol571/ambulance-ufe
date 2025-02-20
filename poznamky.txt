@@ -2,6 +2,10 @@ npm init stencil -> Component
 npm install -s @material/web
 npm run generate
 
+
+docker manifest inspect patriksabol/ambulance-ufe:latest
+## if this doesnt contain layers, then you need to build with DOCKER_BUILDKIT=0
+
 export DOCKER_BUILDKIT=0   
 docker build -t ambulance-ufe -f build/docker/Dockerfile .
 docker tag ambulance-ufe patriksabol/ambulance-ufe:latest
