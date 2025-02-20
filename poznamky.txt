@@ -2,5 +2,9 @@ npm init stencil -> Component
 npm install -s @material/web
 npm run generate
 
+export DOCKER_BUILDKIT=0   
 docker build -t ambulance-ufe -f build/docker/Dockerfile .
+docker tag ambulance-ufe patriksabol/ambulance-ufe:latest
+docker push patriksabol/ambulance-ufe:latest
+
 docker run -p 8000:8080 --name ambulance-ufe-server ambulance-ufe
