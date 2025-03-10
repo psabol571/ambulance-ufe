@@ -12,3 +12,6 @@ docker tag ambulance-ufe patriksabol/ambulance-ufe:latest
 docker push patriksabol/ambulance-ufe:latest
 
 docker run -p 8000:8080 --name ambulance-ufe-server ambulance-ufe
+
+// existujuce riesenia
+https://landscape.cncf.io/

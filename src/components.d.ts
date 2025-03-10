@@ -6,24 +6,84 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface Cv1sabolAmbulanceWlApp {
+        "basePath": string;
+    }
+    interface Cv1sabolAmbulanceWlEditor {
+        "entryId": string;
+    }
     interface Cv1sabolAmbulanceWlList {
     }
 }
+export interface Cv1sabolAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCv1sabolAmbulanceWlEditorElement;
+}
+export interface Cv1sabolAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCv1sabolAmbulanceWlListElement;
+}
 declare global {
+    interface HTMLCv1sabolAmbulanceWlAppElement extends Components.Cv1sabolAmbulanceWlApp, HTMLStencilElement {
+    }
+    var HTMLCv1sabolAmbulanceWlAppElement: {
+        prototype: HTMLCv1sabolAmbulanceWlAppElement;
+        new (): HTMLCv1sabolAmbulanceWlAppElement;
+    };
+    interface HTMLCv1sabolAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLCv1sabolAmbulanceWlEditorElement extends Components.Cv1sabolAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCv1sabolAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLCv1sabolAmbulanceWlEditorElement, ev: Cv1sabolAmbulanceWlEditorCustomEvent<HTMLCv1sabolAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCv1sabolAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLCv1sabolAmbulanceWlEditorElement, ev: Cv1sabolAmbulanceWlEditorCustomEvent<HTMLCv1sabolAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLCv1sabolAmbulanceWlEditorElement: {
+        prototype: HTMLCv1sabolAmbulanceWlEditorElement;
+        new (): HTMLCv1sabolAmbulanceWlEditorElement;
+    };
+    interface HTMLCv1sabolAmbulanceWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLCv1sabolAmbulanceWlListElement extends Components.Cv1sabolAmbulanceWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCv1sabolAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLCv1sabolAmbulanceWlListElement, ev: Cv1sabolAmbulanceWlListCustomEvent<HTMLCv1sabolAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCv1sabolAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLCv1sabolAmbulanceWlListElement, ev: Cv1sabolAmbulanceWlListCustomEvent<HTMLCv1sabolAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCv1sabolAmbulanceWlListElement: {
         prototype: HTMLCv1sabolAmbulanceWlListElement;
         new (): HTMLCv1sabolAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "cv1sabol-ambulance-wl-app": HTMLCv1sabolAmbulanceWlAppElement;
+        "cv1sabol-ambulance-wl-editor": HTMLCv1sabolAmbulanceWlEditorElement;
         "cv1sabol-ambulance-wl-list": HTMLCv1sabolAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface Cv1sabolAmbulanceWlApp {
+        "basePath"?: string;
+    }
+    interface Cv1sabolAmbulanceWlEditor {
+        "entryId"?: string;
+        "onEditor-closed"?: (event: Cv1sabolAmbulanceWlEditorCustomEvent<string>) => void;
+    }
     interface Cv1sabolAmbulanceWlList {
+        "onEntry-clicked"?: (event: Cv1sabolAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
+        "cv1sabol-ambulance-wl-app": Cv1sabolAmbulanceWlApp;
+        "cv1sabol-ambulance-wl-editor": Cv1sabolAmbulanceWlEditor;
         "cv1sabol-ambulance-wl-list": Cv1sabolAmbulanceWlList;
     }
 }
@@ -31,6 +91,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cv1sabol-ambulance-wl-app": LocalJSX.Cv1sabolAmbulanceWlApp & JSXBase.HTMLAttributes<HTMLCv1sabolAmbulanceWlAppElement>;
+            "cv1sabol-ambulance-wl-editor": LocalJSX.Cv1sabolAmbulanceWlEditor & JSXBase.HTMLAttributes<HTMLCv1sabolAmbulanceWlEditorElement>;
             "cv1sabol-ambulance-wl-list": LocalJSX.Cv1sabolAmbulanceWlList & JSXBase.HTMLAttributes<HTMLCv1sabolAmbulanceWlListElement>;
         }
     }
