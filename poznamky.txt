@@ -15,3 +15,7 @@ docker run -p 8000:8080 --name ambulance-ufe-server ambulance-ufe
 
 // existujuce riesenia
 https://landscape.cncf.io/
+
+kubectl get gitrepository cv1sabol-gitops-repo -n wac-hospital
+kubectl get kustomization cv1sabol-cd -n wac-hospital
+kubectl get kustomization cv1sabol-install -n wac-hospital

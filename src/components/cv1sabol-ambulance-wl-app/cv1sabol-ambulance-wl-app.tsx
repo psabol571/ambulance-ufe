@@ -38,6 +38,8 @@ export class Cv1sabolAmbulanceWlApp {
   render() {
     let element = "list"
     let entryId = "@new"
+
+    console.debug("<pfx>-ambulance-wl-app.render() - path: %s", this.relativePath);
   
     if ( this.relativePath.startsWith("entry/"))
     {
